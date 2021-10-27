@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { useTodoTask } from "../context/JiraContext";
 
@@ -18,6 +18,7 @@ const reducer = (state, action) => {
 };
 
 const CreateUpdateModel = ({ updateTask, closeModel }) => {
+    const afterModel = useRef();
     const [taskInputData, dispatch] = useReducer(
         reducer,
         updateTask ? updateTask : initialValue
@@ -33,9 +34,14 @@ const CreateUpdateModel = ({ updateTask, closeModel }) => {
         taskManage(setTask(taskInputData));
         closeModel();
     };
-
+    const afterRef = () => {
+        if (afterModel.current.localName === "div") {
+            closeModel();
+        }
+        console.log(afterModel);
+    };
     return (
-        <div className="formModel">
+        <div className="formModel" ref={afterModel} onClick={afterRef}>
             <form onSubmit={onhandleSubmit}>
                 <div className="formGroup">
                     <label>Task</label>

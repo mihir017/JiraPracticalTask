@@ -94,7 +94,7 @@ body {
     border: 1px solid #0080008c;
 }
 .listView .table .taskList .singleTask:hover {
-    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: none;
 }
 .listView .table .taskList .singleTask .todo {
     font-family: var(--Josefin-Sans);
