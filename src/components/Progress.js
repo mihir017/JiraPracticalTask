@@ -6,8 +6,8 @@ const Progress = () => {
     const { taskList } = useTodoTask();
     return (
         <div className="table">
-            <h2 className="title">Progress</h2>
-            <div className="taskList">
+            <h2 className="title progress">Progress</h2>
+            <div className="taskList allProgress">
                 {taskList.map((task) => {
                     return task.status === "progress" ? (
                         <SingleTask key={task.id} task={task} />

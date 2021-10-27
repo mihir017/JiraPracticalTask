@@ -6,8 +6,8 @@ const DoneTodo = () => {
     const { taskList } = useTodoTask();
     return (
         <div className="table">
-            <h2 className="title">Done</h2>
-            <div className="taskList">
+            <h2 className="title  done">Done</h2>
+            <div className="taskList allDone">
                 {taskList.map((task) => {
                     return task.status === "complete" ? (
                         <SingleTask key={task.id} task={task} />

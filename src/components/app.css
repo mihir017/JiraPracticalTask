@@ -36,6 +36,12 @@ body {
     width: 180px;
     margin: 2rem 0;
     border-radius: 10px;
+    border: 1px solid #1fd19f82;
+    background-color: #1fd19f82;
+    box-shadow: 3px 3px 0px #1fd19f4d;
+}
+.taskPage .createBtn:hover {
+    box-shadow: none;
 }
 .listView {
     display: grid;
@@ -43,7 +49,7 @@ body {
     gap: 1rem 2rem;
 }
 .listView .table {
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
 }
 .listView .table .title {
     font-size: 1.5rem;
@@ -51,7 +57,19 @@ body {
     text-align: center;
     font-family: var(--Lato);
     text-transform: uppercase;
-    border-bottom: 1px solid gray;
+    /* border-bottom: 1px solid gray; */
+}
+.listView .table .title.todoTask {
+    background-color: #2acef385;
+    box-shadow: 5px 5px 0 #2acef34f;
+}
+.listView .table .title.progress {
+    background-color: #ffa50091;
+    box-shadow: 5px 5px 0 #ffa60051;
+}
+.listView .table .title.done {
+    background-color: #0080008c;
+    box-shadow: 5px 5px 0 #00800056;
 }
 .listView .table .taskList {
     padding: 1rem 0;
@@ -60,6 +78,23 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 1rem 2rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+.listView .table .taskList.all .singleTask {
+    box-shadow: 3px 3px 0 #2acef34f;
+    border: 1px solid #2acef385;
+}
+.listView .table .taskList.allProgress .singleTask {
+    box-shadow: 3px 3px 0 #ffa60051;
+    border: 1px solid #ffa50091;
+}
+.listView .table .taskList.allDone .singleTask {
+    box-shadow: 3px 3px 0 #00800056;
+    border: 1px solid #0080008c;
+}
+.listView .table .taskList .singleTask:hover {
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
 }
 .listView .table .taskList .singleTask .todo {
     font-family: var(--Josefin-Sans);
@@ -91,7 +126,7 @@ body {
     position: absolute;
     top: 25.2%;
     right: 38.5%;
-    color: red;
+    color: #4c00ff;
     font-family: var(--Josefin-Sans);
     font-weight: 200;
     z-index: 5;
@@ -103,9 +138,9 @@ body {
     display: flex;
     padding: 2rem;
     flex-direction: column;
-    background-color: pink;
+    background-color: #9ed7f9;
     z-index: 2;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 6px 6px 0px #9ed8f9b2;
 }
 label {
     display: block;
@@ -117,7 +152,7 @@ input,
 textarea,
 select {
     padding: 0.6rem 1rem;
-    border: 1px solid gray;
+    border: 1px solid white;
     outline: none;
     width: 300px;
     /* border-radius: 10px; */
@@ -131,6 +166,13 @@ form button {
     width: 150px;
     margin: 1.5rem 0 0.5rem;
     padding: 0.5rem;
+    border: 1px solid #1fd19f82;
+    background-color: #1fd19f82;
+    box-shadow: 3px 3px 0px #1fd19f4d;
+    cursor: pointer;
+}
+form button:hover {
+    box-shadow: none;
 }
 
 .sT {

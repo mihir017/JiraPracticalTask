@@ -11,8 +11,8 @@ const Todo = () => {
 
     return (
         <div className="table">
-            <h3 className="title">ToDo</h3>
-            <div className="taskList">
+            <h3 className="title todoTask">ToDo</h3>
+            <div className="taskList all">
                 {taskList.map((task) => {
                     return (
                         <SingleTask
