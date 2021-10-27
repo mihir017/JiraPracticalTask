@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400&family=Lato:wght@300;400;700&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --Josefin-Sans: "Josefin Sans", sans-serif;
+    --Lato: "Lato", sans-serif;
+}
+/* utility  */
+
+.btn {
+    padding: 0.6rem 1.2rem;
+    border: 1px solid black;
+    font-family: var(--Lato);
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+/* utility  */
+body {
+    width: 100%;
+    height: 100vh;
+}
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 2rem 0.5rem;
+}
+.taskPage {
+    width: 100%;
+}
+.taskPage .createBtn {
+    width: 180px;
+    margin: 2rem 0;
+    border-radius: 10px;
+}
+.listView {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem 2rem;
+}
+.listView .table {
+    border: 1px solid gray;
+}
+.listView .table .title {
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    text-align: center;
+    font-family: var(--Lato);
+    text-transform: uppercase;
+    border-bottom: 1px solid gray;
+}
+.listView .table .taskList {
+    padding: 1rem 0;
+}
+.listView .table .taskList .singleTask {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+.listView .table .taskList .singleTask .todo {
+    font-family: var(--Josefin-Sans);
+    text-transform: capitalize;
+    font-size: 1rem;
+}
+.listView .table .taskList .singleTask i {
+    cursor: pointer;
+}
+
+.formModel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    background: rgba(128, 128, 128, 0.488);
+    /* backdrop-filter: blur(1px); */
+    z-index: 1;
+}
+.formModel > .close {
+    background-color: transparent;
+    font-size: 2.8rem;
+    border: none;
+    position: absolute;
+    top: 25.2%;
+    right: 38.5%;
+    color: red;
+    font-family: var(--Josefin-Sans);
+    font-weight: 200;
+    z-index: 5;
+    cursor: pointer;
+}
+.formModel form {
+    /* width: 500px; */
+    /* height: 500px; */
+    display: flex;
+    padding: 2rem;
+    flex-direction: column;
+    background-color: pink;
+    z-index: 2;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+}
+label {
+    display: block;
+    margin-top: 0.7rem;
+    font-family: var(--Lato);
+    font-size: 0.9rem;
+}
+input,
+textarea,
+select {
+    padding: 0.6rem 1rem;
+    border: 1px solid gray;
+    outline: none;
+    width: 300px;
+    /* border-radius: 10px; */
+    background-color: aliceblue;
+    font-family: var(--Lato);
+    letter-spacing: 1px;
+    color: #333;
+    margin-top: 0.4rem;
+}
+form button {
+    width: 150px;
+    margin: 1.5rem 0 0.5rem;
+    padding: 0.5rem;
+}
+
+.sT {
+}

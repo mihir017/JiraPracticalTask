@@ -4,7 +4,7 @@ const TodoTaskContext = createContext();
 
 export const TodoTaskProvider = ({ children }) => {
     const [taskList, setTaskList] = useState([]);
-    console.log(taskList);
+    // console.log(taskList);
 
     //add Task into taskList
     const taskManage = (task) => {
@@ -13,6 +13,11 @@ export const TodoTaskProvider = ({ children }) => {
         );
         if (alreadyExist.length === 0) {
             setTaskList([...taskList, task]);
+        } else {
+            const updatedTask = taskList.map((presentTask) => {
+                return presentTask.id === task.id ? task : presentTask;
+            });
+            setTaskList([...updatedTask]);
         }
     };
 

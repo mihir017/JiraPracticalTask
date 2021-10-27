@@ -17,21 +17,25 @@ const reducer = (state, action) => {
     }
 };
 
-const CreateUpdateModel = () => {
-    const [taskInputData, dispatch] = useReducer(reducer, initialValue);
+const CreateUpdateModel = ({ updateTask, closeModel }) => {
+    const [taskInputData, dispatch] = useReducer(
+        reducer,
+        updateTask ? updateTask : initialValue
+    );
     const { taskManage } = useTodoTask();
 
     const setTask = (task) => {
-        return { id: uuidv4(), ...task };
+        return task.id ? { ...task } : { id: uuidv4(), ...task };
     };
 
     const onhandleSubmit = (e) => {
         e.preventDefault();
         taskManage(setTask(taskInputData));
+        closeModel();
     };
 
     return (
-        <div style={{ marginTop: "2rem" }}>
+        <div className="formModel">
             <form onSubmit={onhandleSubmit}>
                 <div className="formGroup">
                     <label>Task</label>
@@ -51,6 +55,7 @@ const CreateUpdateModel = () => {
                     <label>Description</label>
                     <textarea
                         name="description"
+                        rows="6"
                         value={taskInputData.description}
                         onChange={(e) =>
                             dispatch({
@@ -77,8 +82,13 @@ const CreateUpdateModel = () => {
                         <option value="complete">Complete</option>
                     </select>
                 </div>
-                <button type="submit">Create/Update</button>
+                <button type="submit">
+                    {updateTask ? "Update" : "Create"}
+                </button>
             </form>
+            <button className="close" onClick={() => closeModel()}>
+                x
+            </button>
         </div>
     );
 };

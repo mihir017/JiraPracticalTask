@@ -5,12 +5,25 @@ import SingleTask from "./SingleTask";
 const Todo = () => {
     const { taskList } = useTodoTask();
 
+    // const openWindow = () => {
+    //     setIsOpen(!isOpen);
+    // };
+
     return (
-        <div>
-            <h3>ToDo</h3>
-            {taskList.map((task) => {
-                return <SingleTask task={task} key={task.id} />;
-            })}
+        <div className="table">
+            <h3 className="title">ToDo</h3>
+            <div className="taskList">
+                {taskList.map((task) => {
+                    return (
+                        <SingleTask
+                            task={task}
+                            key={task.id}
+                            // openWindow={openWindow}
+                        />
+                    );
+                })}
+            </div>
+            {/* {isOpen && <CreateUpdateModel />} */}
         </div>
     );
 };
