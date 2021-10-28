@@ -4,7 +4,6 @@ const TodoTaskContext = createContext();
 
 export const TodoTaskProvider = ({ children }) => {
     const [taskList, setTaskList] = useState([]);
-    // console.log(taskList);
 
     //add Task into taskList
     const taskManage = (task) => {

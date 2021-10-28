@@ -8,12 +8,13 @@ let initialValue = {
     status: "",
 };
 
+// reducer function
 const reducer = (state, action) => {
     switch (action.type) {
         case "CREATE":
             return { ...state, ...action.payload };
         default:
-            return "null";
+            return "can't match the type";
     }
 };
 
@@ -24,17 +25,21 @@ const CreateUpdateModel = ({ updateTask, closeModel }) => {
     );
     const { taskManage } = useTodoTask();
 
+    // set the task id
     const setTask = (task) => {
         return task.id ? { ...task } : { id: uuidv4(), ...task };
     };
 
+    //Submit data
     const onhandleSubmit = (e) => {
         e.preventDefault();
         taskManage(setTask(taskInputData));
         closeModel();
     };
+
+    // return react element
     return (
-        <div className={`formModel ${updateTask ? "taskFormModel" : ""}`}>
+        <div className={`formModel ${updateTask ? "taskFormModel" : ""} `}>
             <form onSubmit={onhandleSubmit}>
                 <div className="formGroup">
                     <label>Task</label>

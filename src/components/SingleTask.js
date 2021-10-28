@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import CreateUpdateModel from "./CreateUpdateModel";
 
-const SingleTask = ({ task, openWindow }) => {
+const SingleTask = ({ task }) => {
     const [isOpen, setIsOpen] = useState(false);
     const closeModel = () => {
         setIsOpen(!isOpen);
@@ -9,12 +9,12 @@ const SingleTask = ({ task, openWindow }) => {
     return (
         <>
             <div>
-                <div className="singleTask">
+                <div className="singleTask" onClick={() => setIsOpen(!isOpen)}>
                     <p class="todo">{task.task}</p>
-                    <i
+                    {/* <i
                         className="fas fa-pen"
                         onClick={() => setIsOpen(!isOpen)}
-                    ></i>
+                    ></i> */}
                 </div>
 
                 {isOpen && (

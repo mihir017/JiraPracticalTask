@@ -3,17 +3,17 @@ import CreateUpdateModel from "./CreateUpdateModel";
 import DoneTodo from "./DoneTodo";
 import Progress from "./Progress";
 import Todo from "./Todo";
-import { useTodoTask } from "../context/JiraContext";
 
 const ListView = () => {
     const [isOpen, setIsOpen] = useState(false);
-    // const { taskList } = useTodoTask();
-    // // console.log(taskList);
     const closeModel = () => {
         setIsOpen(!isOpen);
     };
     return (
         <div className="taskPage">
+            <h2 className="logo">
+                Day <span>Work</span>
+            </h2>
             <button
                 className="btn createBtn"
                 onClick={() => setIsOpen(!isOpen)}

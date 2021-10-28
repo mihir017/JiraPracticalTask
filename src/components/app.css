@@ -29,6 +29,18 @@ body {
     margin: auto;
     padding: 2rem 0.5rem;
 }
+.logo {
+    text-align: center;
+    font-size: 1.6rem;
+    font-family: var(--Josefin-Sans);
+    font-weight: 200;
+}
+.logo span {
+    font-weight: 500;
+    margin-left: -10px;
+    font-size: 2.2rem;
+    color: #73b973;
+}
 .taskPage {
     width: 100%;
 }
@@ -47,9 +59,6 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem 2rem;
-}
-.listView .table {
-    /* border: 1px solid gray; */
 }
 .listView .table .title {
     font-size: 1.5rem;
@@ -119,43 +128,7 @@ body {
     /* backdrop-filter: blur(1px); */
     z-index: 1;
 }
-.formModel.taskFormModel {
-    position: relative;
-    width: 400px;
-    top: 4.5rem;
-    background: transparent;
-    margin-bottom: 1.5rem;
-}
-.formModel.taskFormModel form {
-    width: 375px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 0 20px;
-}
-.formModel.taskFormModel form button {
-    padding: 0.3rem;
-    border-radius: 10px;
-}
-.formModel.taskFormModel form textarea,
-.formModel.taskFormModel form select,
-.formModel.taskFormModel form input {
-    width: 170px;
-    padding: 0.4rem 0.8rem;
-    border-radius: 10px;
-}
-.formModel.taskFormModel form label {
-    font-size: 0.7rem;
-    margin-top: 0.3rem;
-}
-.formModel.taskFormModel form {
-    padding: 1rem;
-}
-.formModel.taskFormModel > .close {
-    top: -0.8%;
-    right: 5.5%;
-    font-size: 1.8rem;
-    color: white;
-}
+
 .formModel > .close {
     background-color: transparent;
     font-size: 2.8rem;
@@ -211,3 +184,53 @@ form button {
 form button:hover {
     box-shadow: none;
 }
+
+/* ==================================== after click on Update button taskFormModel ==================================== */
+.formModel.taskFormModel {
+    position: relative;
+    width: 100%;
+    top: 4.5rem;
+    background: transparent;
+    margin-bottom: 1.5rem;
+}
+.formModel.taskFormModel form {
+    width: 355px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 0 20px;
+    background-color: #2acef385;
+    box-shadow: 5px 5px 0 #2acef34f;
+}
+/* .formModel.taskFormModel form.progress {
+    background-color: #ffa50091;
+    box-shadow: 5px 5px 0 #ffa60051;
+}
+.formModel.taskFormModel form.complete {
+    background-color: #0080008c;
+    box-shadow: 5px 5px 0 #00800056;
+} */
+.formModel.taskFormModel form button {
+    padding: 0.3rem;
+    border-radius: 10px;
+}
+.formModel.taskFormModel form textarea,
+.formModel.taskFormModel form select,
+.formModel.taskFormModel form input {
+    width: 150px;
+    padding: 0.4rem 0.8rem;
+    border-radius: 10px;
+}
+.formModel.taskFormModel form label {
+    font-size: 0.7rem;
+    margin-top: 0.3rem;
+}
+.formModel.taskFormModel form {
+    padding: 1rem;
+}
+.formModel.taskFormModel > .close {
+    top: -0.8%;
+    right: 5.5%;
+    font-size: 1.8rem;
+    color: white;
+}
+/* ==================================== after click on Update button taskFormModel ==================================== */

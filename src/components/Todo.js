@@ -14,16 +14,9 @@ const Todo = () => {
             <h3 className="title todoTask">ToDo</h3>
             <div className="taskList all">
                 {taskList.map((task) => {
-                    return (
-                        <SingleTask
-                            task={task}
-                            key={task.id}
-                            // openWindow={openWindow}
-                        />
-                    );
+                    return <SingleTask task={task} key={task.id} />;
                 })}
             </div>
-            {/* {isOpen && <CreateUpdateModel />} */}
         </div>
     );
 };
