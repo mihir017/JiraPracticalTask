@@ -2,7 +2,7 @@ import React, { useReducer } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { useTodoTask } from "../context/JiraContext";
 
-const initialValue = {
+let initialValue = {
     task: "",
     description: "",
     status: "",
@@ -34,7 +34,7 @@ const CreateUpdateModel = ({ updateTask, closeModel }) => {
         closeModel();
     };
     return (
-        <div className="formModel">
+        <div className={`formModel ${updateTask ? "taskFormModel" : ""}`}>
             <form onSubmit={onhandleSubmit}>
                 <div className="formGroup">
                     <label>Task</label>
@@ -54,7 +54,7 @@ const CreateUpdateModel = ({ updateTask, closeModel }) => {
                     <label>Description</label>
                     <textarea
                         name="description"
-                        rows="6"
+                        rows={updateTask ? "1" : "6"}
                         value={taskInputData.description}
                         onChange={(e) =>
                             dispatch({

@@ -119,6 +119,43 @@ body {
     /* backdrop-filter: blur(1px); */
     z-index: 1;
 }
+.formModel.taskFormModel {
+    position: relative;
+    width: 400px;
+    top: 4.5rem;
+    background: transparent;
+    margin-bottom: 1.5rem;
+}
+.formModel.taskFormModel form {
+    width: 375px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 0 20px;
+}
+.formModel.taskFormModel form button {
+    padding: 0.3rem;
+    border-radius: 10px;
+}
+.formModel.taskFormModel form textarea,
+.formModel.taskFormModel form select,
+.formModel.taskFormModel form input {
+    width: 170px;
+    padding: 0.4rem 0.8rem;
+    border-radius: 10px;
+}
+.formModel.taskFormModel form label {
+    font-size: 0.7rem;
+    margin-top: 0.3rem;
+}
+.formModel.taskFormModel form {
+    padding: 1rem;
+}
+.formModel.taskFormModel > .close {
+    top: -0.8%;
+    right: 5.5%;
+    font-size: 1.8rem;
+    color: white;
+}
 .formModel > .close {
     background-color: transparent;
     font-size: 2.8rem;
@@ -126,7 +163,7 @@ body {
     position: absolute;
     top: 25.2%;
     right: 38.5%;
-    color: #4c00ff;
+    color: white;
     font-family: var(--Josefin-Sans);
     font-weight: 200;
     z-index: 5;
@@ -173,7 +210,4 @@ form button {
 }
 form button:hover {
     box-shadow: none;
-}
-
-.sT {
 }

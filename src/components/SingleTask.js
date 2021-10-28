@@ -8,17 +8,22 @@ const SingleTask = ({ task, openWindow }) => {
     };
     return (
         <>
-            <div className="singleTask">
-                <p class="todo">{task.task}</p>
-                <i
-                    className="fas fa-pen"
-                    onClick={() => setIsOpen(!isOpen)}
-                ></i>
-            </div>
+            <div>
+                <div className="singleTask">
+                    <p class="todo">{task.task}</p>
+                    <i
+                        className="fas fa-pen"
+                        onClick={() => setIsOpen(!isOpen)}
+                    ></i>
+                </div>
 
-            {isOpen && (
-                <CreateUpdateModel updateTask={task} closeModel={closeModel} />
-            )}
+                {isOpen && (
+                    <CreateUpdateModel
+                        updateTask={task}
+                        closeModel={closeModel}
+                    />
+                )}
+            </div>
         </>
     );
 };
