@@ -14,7 +14,11 @@ const Todo = () => {
             <h3 className="title todoTask">ToDo</h3>
             <div className="taskList all">
                 {taskList.map((task) => {
-                    return <SingleTask task={task} key={task.id} />;
+                    return task.status === "hold" ? (
+                        <SingleTask key={task.id} task={task} />
+                    ) : (
+                        ""
+                    );
                 })}
             </div>
         </div>

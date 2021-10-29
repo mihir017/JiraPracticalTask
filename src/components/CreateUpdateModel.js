@@ -14,7 +14,7 @@ const reducer = (state, action) => {
         case "CREATE":
             return { ...state, ...action.payload };
         default:
-            return "can't match the type";
+            throw new Error();
     }
 };
 
@@ -82,6 +82,7 @@ const CreateUpdateModel = ({ updateTask, closeModel }) => {
                         }
                     >
                         <option value="">Select</option>
+                        <option value="hold">Hold</option>
                         <option value="progress">Progress</option>
                         <option value="complete">Complete</option>
                     </select>
