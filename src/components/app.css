@@ -197,7 +197,7 @@ form button:hover {
 .formModel.taskFormModel {
     position: relative;
     width: 100%;
-    top: 8rem;
+    top: 9rem;
     background: transparent;
     margin-bottom: 1.5rem;
 }
