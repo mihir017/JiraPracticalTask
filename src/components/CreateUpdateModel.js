@@ -74,7 +74,7 @@ const CreateUpdateModel = ({ updateTask, closeModel }) => {
                     <label>Description</label>
                     <textarea
                         name="description"
-                        rows={updateTask ? "4" : "6"}
+                        rows="6"
                         value={taskInputData.description}
                         onChange={(e) =>
                             dispatch({
