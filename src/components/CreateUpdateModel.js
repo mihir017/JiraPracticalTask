@@ -42,8 +42,23 @@ const CreateUpdateModel = ({ updateTask, closeModel }) => {
         <div className={`formModel ${updateTask ? "taskFormModel" : ""} `}>
             <form onSubmit={onhandleSubmit}>
                 <div className="formGroup">
-                    <label>Task</label>
-                    <input
+                    {!updateTask && (
+                        <>
+                            <label>Task</label>
+                            <input
+                                type="text"
+                                name="task"
+                                value={taskInputData.task}
+                                onChange={(e) =>
+                                    dispatch({
+                                        type: "CREATE",
+                                        payload: { task: e.target.value },
+                                    })
+                                }
+                            />
+                        </>
+                    )}
+                    {/* <input
                         type="text"
                         name="task"
                         value={taskInputData.task}
@@ -53,13 +68,13 @@ const CreateUpdateModel = ({ updateTask, closeModel }) => {
                                 payload: { task: e.target.value },
                             })
                         }
-                    />
+                    /> */}
                 </div>
                 <div className="formGroup">
                     <label>Description</label>
                     <textarea
                         name="description"
-                        rows={updateTask ? "1" : "6"}
+                        rows={updateTask ? "4" : "6"}
                         value={taskInputData.description}
                         onChange={(e) =>
                             dispatch({

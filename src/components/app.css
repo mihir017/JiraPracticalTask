@@ -85,6 +85,7 @@ body {
 }
 .listView .table .taskList .singleTask {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     padding: 1rem 2rem;
     cursor: pointer;
@@ -109,11 +110,18 @@ body {
     font-family: var(--Josefin-Sans);
     text-transform: capitalize;
     font-size: 1rem;
+    flex: 1;
 }
 .listView .table .taskList .singleTask i {
     cursor: pointer;
+    font-size: 12px;
 }
-
+.updateInput {
+    border-bottom: 1.5px solid #25a3d3;
+    width: 100%;
+    margin-right: 2rem;
+    margin-top: 0;
+}
 .formModel {
     position: absolute;
     width: 100%;
@@ -189,15 +197,12 @@ form button:hover {
 .formModel.taskFormModel {
     position: relative;
     width: 100%;
-    top: 4.5rem;
+    top: 8rem;
     background: transparent;
     margin-bottom: 1.5rem;
 }
 .formModel.taskFormModel form {
-    width: 355px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 0 20px;
+    width: 100%;
     background-color: #2acef385;
     box-shadow: 5px 5px 0 #2acef34f;
 }
@@ -216,7 +221,7 @@ form button:hover {
 .formModel.taskFormModel form textarea,
 .formModel.taskFormModel form select,
 .formModel.taskFormModel form input {
-    width: 150px;
+    width: 100%;
     padding: 0.4rem 0.8rem;
     border-radius: 10px;
 }
@@ -228,8 +233,8 @@ form button:hover {
     padding: 1rem;
 }
 .formModel.taskFormModel > .close {
-    top: -0.8%;
-    right: 5.5%;
+    top: 0.2%;
+    right: 3.5%;
     font-size: 1.8rem;
     color: white;
 }
